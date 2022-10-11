@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 16:33:53 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:59:46 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	test_is_alnum(void)
 // TODO add test for isascii
 
 // TODO add test for isprint
+
+// TODO add test for memset
 
 int	main(void)
 {

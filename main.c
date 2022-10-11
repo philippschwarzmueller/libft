@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 15:55:17 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:33:53 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ int	test_is_alnum(void)
 	printf("Testing P, expected %i, result %i\n", isalnum('P'), ft_isalnum('P'));
 	return (0);
 }
+
+// TODO add test for isascii
+
+// TODO add test for isprint
 
 int	main(void)
 {

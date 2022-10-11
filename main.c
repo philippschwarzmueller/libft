@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 17:45:13 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:54:14 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,15 @@ int	test_isascii(void)
 	return (0);
 }
 
-// TODO add test for isprint
+int	test_isprint(void)
+{
+	printf("TESTING FT_ISPRINT\n");
+	printf("Testing -1, expected %i, result %i\n", isprint(-1), ft_isprint(-1));
+	printf("Testing 0, expected %i, result %i\n", isprint(0), ft_isprint(0));
+	printf("Testing !, expected %i, result %i\n", isprint('!'), ft_isprint('!'));
+	printf("Testing ~, expected %i, result %i\n", isprint('~'), ft_isprint('~'));
+	return (0);
+}
 
 // TODO add test for memset
 
@@ -74,5 +82,6 @@ int	main(void)
 	test_isdigit();
 	test_isalnum();
 	test_isascii();
+	test_isprint();
 	return (0);
 }

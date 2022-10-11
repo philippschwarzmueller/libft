@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 17:35:24 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:45:13 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include "libft.h"
 
-int	test_is_alpha(void)
+int	test_isalpha(void)
 {
 	printf("TESTING FT_ISALPHA\n");
 	printf("Testing 100, expected %i, result %i\n", isalpha(100), ft_isalpha(100));
@@ -28,7 +28,7 @@ int	test_is_alpha(void)
 	return (0);
 }
 
-int	test_is_digit(void)
+int	test_isdigit(void)
 {
 	printf("TESTING FT_ISDIGIT\n");
 	printf("Testing -1, expected %i, result %i\n", isdigit(-1), ft_isdigit(-1));
@@ -40,7 +40,7 @@ int	test_is_digit(void)
 	return (0);
 }
 
-int	test_is_alnum(void)
+int	test_isalnum(void)
 {
 	printf("TESTING FT_ISALNUM\n");
 	printf("Testing -1, expected %i, result %i\n", isalnum(-1), ft_isalnum(-1));
@@ -52,7 +52,15 @@ int	test_is_alnum(void)
 	return (0);
 }
 
-// TODO add test for isascii
+int	test_isascii(void)
+{
+	printf("TESTING FT_ISASCII\n");
+	printf("Testing -1, expected %i, result %i\n", isascii(-1), ft_isascii(-1));
+	printf("Testing 0, expected %i, result %i\n", isascii(0), ft_isascii(0));
+	printf("Testing !, expected %i, result %i\n", isascii('!'), ft_isascii('!'));
+	printf("Testing ~, expected %i, result %i\n", isascii('~'), ft_isascii('~'));
+	return (0);
+}
 
 // TODO add test for isprint
 
@@ -62,8 +70,9 @@ int	test_is_alnum(void)
 
 int	main(void)
 {
-	test_is_alpha();
-	test_is_digit();
-	test_is_alnum();
+	test_isalpha();
+	test_isdigit();
+	test_isalnum();
+	test_isascii();
 	return (0);
 }

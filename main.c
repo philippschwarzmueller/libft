@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 09:47:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 10:27:40 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 #include <string.h>
 #include "libft.h"
 
+int	print_testname(char *name)
+{
+	printf("\x1b[32m");
+	printf("-----TESTING %s-----\x1b[0m\n", name);
+	return (0);
+}
+
 int	test_isalpha(void)
 {
-	printf("TESTING FT_ISALPHA\n");
+	print_testname("TESTING FT_ISALPHA");
 	printf("Testing 100, expected %i, result %i\n", isalpha(100), ft_isalpha(100));
 	printf("Testing 101, expected %i, result %i\n", isalpha(101), ft_isalpha(101));
 	printf("Testing 132, expected %i, result %i\n", isalpha(132), ft_isalpha(132));
@@ -31,7 +38,7 @@ int	test_isalpha(void)
 
 int	test_isdigit(void)
 {
-	printf("TESTING FT_ISDIGIT\n");
+	print_testname("TESTING FT_ISDIGIT");
 	printf("Testing -1, expected %i, result %i\n", isdigit(-1), ft_isdigit(-1));
 	printf("Testing 0, expected %i, result %i\n", isdigit('0'), ft_isdigit('0'));
 	printf("Testing 5, expected %i, result %i\n", isdigit('5'), ft_isdigit('5'));
@@ -43,7 +50,7 @@ int	test_isdigit(void)
 
 int	test_isalnum(void)
 {
-	printf("TESTING FT_ISALNUM\n");
+	print_testname("TESTING FT_ISALNUM");
 	printf("Testing -1, expected %i, result %i\n", isalnum(-1), ft_isalnum(-1));
 	printf("Testing 0, expected %i, result %i\n", isalnum('0'), ft_isalnum('0'));
 	printf("Testing 5, expected %i, result %i\n", isalnum('5'), ft_isalnum('5'));
@@ -55,7 +62,7 @@ int	test_isalnum(void)
 
 int	test_isascii(void)
 {
-	printf("TESTING FT_ISASCII\n");
+	print_testname("TESTING FT_ISASCII");
 	printf("Testing -1, expected %i, result %i\n", isascii(-1), ft_isascii(-1));
 	printf("Testing 0, expected %i, result %i\n", isascii(0), ft_isascii(0));
 	printf("Testing !, expected %i, result %i\n", isascii('!'), ft_isascii('!'));
@@ -65,7 +72,7 @@ int	test_isascii(void)
 
 int	test_isprint(void)
 {
-	printf("TESTING FT_ISPRINT\n");
+	print_testname("TESTING FT_ISPRINT");
 	printf("Testing -1, expected %i, result %i\n", isprint(-1), ft_isprint(-1));
 	printf("Testing 0, expected %i, result %i\n", isprint(0), ft_isprint(0));
 	printf("Testing !, expected %i, result %i\n", isprint('!'), ft_isprint('!'));
@@ -75,7 +82,7 @@ int	test_isprint(void)
 
 int	test_memset(void)
 {
-	printf("TESTING FT_MEMSET\n");
+	print_testname("TESTING FT_MEMSET");
 	char	teststring[] = "Hello World";
 	printf("Testing Hello World with 'A', expected %s, result %s\n", memset(teststring, 'A', 5), ft_memset(teststring, 'A', 5));
 	return (0);
@@ -83,7 +90,7 @@ int	test_memset(void)
 
 int	test_bzero(void)
 {
-	printf("TESTING FT_BZERO\n");
+	print_testname("TESTING FT_BZERO");
 	char	bzerotest[] = "Hello World";
 	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 1), ft_bzero(bzerotest, 1));
 	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 12), ft_bzero(bzerotest, 12));
@@ -92,10 +99,19 @@ int	test_bzero(void)
 
 int	test_memcpy(void)
 {
-	printf("TESTING MEMCPY\n");
+	print_testname("TESTING FT_MEMCPY");
 	char	memcpydst[] = "hello world";
 	char	memcpysrc[] = "Hello World";
 	printf("Testing hello world and Hello World, expected %s, result %s\n", memcpy(memcpydst, memcpysrc, 12), ft_memcpy(memcpydst, memcpysrc, 12));
+	return (0);
+}
+
+int	test_memmove(void)
+{
+	print_testname("TESTING FT_MEMMOVE");
+	char	str[] = "foo-bar";
+	printf("Memcpy: %s; Memmove: %s\n", memcpy(&str[3], &str[4], 4), memmove(&str[3], &str[4], 4));
+	//doing the same thing, might be because gcc handles it (See comment here: https://stackoverflow.com/a/1201343/13771267)
 	return (0);
 }
 
@@ -109,6 +125,7 @@ int	main(void)
 	test_memset();
 	test_bzero();
 	test_memcpy();
+	test_memmove();
 
 	return (0);
 }

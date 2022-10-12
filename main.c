@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 09:22:40 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 09:47:49 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	test_isprint(void)
 int	test_memset(void)
 {
 	printf("TESTING FT_MEMSET\n");
-	char teststring[] = "Hello World";
+	char	teststring[] = "Hello World";
 	printf("Testing Hello World with 'A', expected %s, result %s\n", memset(teststring, 'A', 5), ft_memset(teststring, 'A', 5));
 	return (0);
 }
@@ -84,13 +84,20 @@ int	test_memset(void)
 int	test_bzero(void)
 {
 	printf("TESTING FT_BZERO\n");
-	char bzerotest[] = "Hello World";
+	char	bzerotest[] = "Hello World";
 	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 1), ft_bzero(bzerotest, 1));
 	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 12), ft_bzero(bzerotest, 12));
 	return (0);
 }
 
-// TODO add MEMCPY Test
+int	test_memcpy(void)
+{
+	printf("TESTING MEMCPY\n");
+	char	memcpydst[] = "hello world";
+	char	memcpysrc[] = "Hello World";
+	printf("Testing hello world and Hello World, expected %s, result %s\n", memcpy(memcpydst, memcpysrc, 12), ft_memcpy(memcpydst, memcpysrc, 12));
+	return (0);
+}
 
 int	main(void)
 {
@@ -101,6 +108,7 @@ int	main(void)
 	test_isprint();
 	test_memset();
 	test_bzero();
+	test_memcpy();
 
 	return (0);
 }

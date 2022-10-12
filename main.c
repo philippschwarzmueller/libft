@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 08:51:51 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 08:59:07 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,14 @@ int	test_memset(void)
 	return (0);
 }
 
-// TODO add test for bzero
+int	test_bzero(void)
+{
+	printf("TESTING FT_BZERO\n");
+	char bzerotest[] = "Hello World";
+	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 12), ft_bzero(bzerotest, 12));
+	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 1), ft_bzero(bzerotest, 1));
+	return (0);
+}
 
 int	main(void)
 {
@@ -91,6 +98,7 @@ int	main(void)
 	test_isascii();
 	test_isprint();
 	test_memset();
+	test_bzero();
 
 	return (0);
 }

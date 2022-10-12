@@ -6,11 +6,11 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:27:43 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 17:35:08 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 08:56:53 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int n)
+void	*ft_bzero(void *s, int n)
 {
 	int		i;
 	char	*temp;
@@ -22,5 +22,5 @@ void	ft_bzero(void *s, int n)
 		temp[i] = 0;
 		i++;
 	}
-	return (*s);
+	return (s);
 }

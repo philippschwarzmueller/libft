@@ -6,14 +6,14 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:27:43 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 10:55:06 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:11:47 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_bzero(void *s, unsigned int n)
 {
-	int		i;
-	char	*temp;
+	unsigned int		i;
+	char				*temp;
 
 	i = 0;
 	temp = s;

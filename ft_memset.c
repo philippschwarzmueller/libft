@@ -6,14 +6,14 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:36:46 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 10:55:12 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:12:09 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *b, int c, unsigned int len)
 {
-	int		i;
-	char	*temp;
+	unsigned int		i;
+	char				*temp;
 
 	temp = b;
 	i = 0;

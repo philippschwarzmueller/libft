@@ -6,12 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 17:54:14 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 08:51:51 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 #include "libft.h"
 
 int	test_isalpha(void)
@@ -72,7 +73,13 @@ int	test_isprint(void)
 	return (0);
 }
 
-// TODO add test for memset
+int	test_memset(void)
+{
+	printf("TESTING FT_MEMSET\n");
+	char teststring[] = "Hello World";
+	printf("Testing Hello World with 'A', expected %s, result %s\n", memset(teststring, 'A', 5), ft_memset(teststring, 'A', 5));
+	return (0);
+}
 
 // TODO add test for bzero
 
@@ -83,5 +90,7 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
+	test_memset();
+
 	return (0);
 }

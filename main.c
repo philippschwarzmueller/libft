@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 10:27:40 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:16:07 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,19 @@ int	test_memmove(void)
 	char	str[] = "foo-bar";
 	printf("Memcpy: %s; Memmove: %s\n", memcpy(&str[3], &str[4], 4), memmove(&str[3], &str[4], 4));
 	//doing the same thing, might be because gcc handles it (See comment here: https://stackoverflow.com/a/1201343/13771267)
+	//TODO test own ft_memmove
+	return (0);
+}
+
+int	test_strlcpy(void)
+{
+	print_testname("TESTING FT_STRLCPY");
+	char	dst[5];
+	char	ft_dst[5];
+	char	src[] = "Test";
+	strlcpy(dst, src, 4);
+	ft_strlcpy(ft_dst, src, 4);
+	printf("Testing empty and Test, expected %s, result %s\n", dst, ft_dst);
 	return (0);
 }
 
@@ -126,6 +139,7 @@ int	main(void)
 	test_bzero();
 	test_memcpy();
 	test_memmove();
+	test_strlcpy();
 
 	return (0);
 }

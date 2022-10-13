@@ -6,11 +6,11 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:59:55 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 11:04:37 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 11:28:33 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *src);
+static int	ft_strlen(char *src);
 
 unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize)
 {
@@ -26,7 +26,7 @@ unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize)
 	return (ft_strlen((char *) src));
 }
 
-int	ft_strlen(char *src)
+static int	ft_strlen(char *src)
 {
 	int	i;
 

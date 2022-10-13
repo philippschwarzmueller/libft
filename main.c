@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 10:56:47 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:12:35 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,22 @@ int	print_testname(char *name)
 int	test_isalpha(void)
 {
 	print_testname("TESTING FT_ISALPHA");
-	printf("Testing 100, expected %i, result %i\n", isalpha(100), ft_isalpha(100));
-	printf("Testing 101, expected %i, result %i\n", isalpha(101), ft_isalpha(101));
-	printf("Testing 132, expected %i, result %i\n", isalpha(132), ft_isalpha(132));
-	printf("Testing 133, expected %i, result %i\n", isalpha(133), ft_isalpha(133));
-	printf("Testing 140, expected %i, result %i\n", isalpha(140), ft_isalpha(140));
-	printf("Testing 141, expected %i, result %i\n", isalpha(141), ft_isalpha(141));
-	printf("Testing 172, expected %i, result %i\n", isalpha(172), ft_isalpha(172));
-	printf("Testing 173, expected %i, result %i\n", isalpha(173), ft_isalpha(173));
+	printf("Testing 100, expected %i, result %i\n", isalpha(100),
+		ft_isalpha(100));
+	printf("Testing 101, expected %i, result %i\n", isalpha(101),
+		ft_isalpha(101));
+	printf("Testing 132, expected %i, result %i\n", isalpha(132),
+		ft_isalpha(132));
+	printf("Testing 133, expected %i, result %i\n", isalpha(133),
+		ft_isalpha(133));
+	printf("Testing 140, expected %i, result %i\n", isalpha(140),
+		ft_isalpha(140));
+	printf("Testing 141, expected %i, result %i\n", isalpha(141),
+		ft_isalpha(141));
+	printf("Testing 172, expected %i, result %i\n", isalpha(172),
+		ft_isalpha(172));
+	printf("Testing 173, expected %i, result %i\n", isalpha(173),
+		ft_isalpha(173));
 	return (0);
 }
 
@@ -77,6 +85,18 @@ int	test_isprint(void)
 	printf("Testing 0, expected %i, result %i\n", isprint(0), ft_isprint(0));
 	printf("Testing !, expected %i, result %i\n", isprint('!'), ft_isprint('!'));
 	printf("Testing ~, expected %i, result %i\n", isprint('~'), ft_isprint('~'));
+	return (0);
+}
+
+int	test_strlen(void)
+{
+	print_testname("TESTING FT_STRELN");
+	char	str1[] = "hello i am a test";
+	char	str2[] = "";
+	char	str3[] = "                                                        ";
+	printf("Expected: %lu, result: %i\n", strlen(str1), ft_strlen(str1));
+	printf("Expected: %lu, result: %i\n", strlen(str2), ft_strlen(str2));
+	printf("Expected: %lu, result: %i\n", strlen(str3), ft_strlen(str3));
 	return (0);
 }
 
@@ -130,6 +150,19 @@ int	test_strlcpy(void)
 	return (0);
 }
 
+int	test_strlcat(void)
+{
+	print_testname("TESTING FT_STRLCAT");
+	char	str1dst[20] = "Hello";
+	char	str1dst2[20] = "Hello";
+	char	str2src[] = " World!";
+	int		returnval1 = strlcat(str1dst2, str2src, 7);
+	int		returnval = ft_strlcat(str1dst, str2src, 7);
+	// TODO strlcat does not seem to work properly - wrong call?
+	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst2, returnval1, str1dst, returnval);
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -137,11 +170,13 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
+	test_strlen();
 	test_memset();
 	test_bzero();
 	test_memcpy();
 	test_memmove();
 	test_strlcpy();
+	test_strlcat();
 
 	return (0);
 }

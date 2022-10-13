@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 11:16:07 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 10:56:47 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,12 @@ int	test_strlcpy(void)
 	print_testname("TESTING FT_STRLCPY");
 	char	dst[5];
 	char	ft_dst[5];
-	char	src[] = "Test";
-	strlcpy(dst, src, 4);
-	ft_strlcpy(ft_dst, src, 4);
-	printf("Testing empty and Test, expected %s, result %s\n", dst, ft_dst);
+	char	string[] = "Test1234";
+	int		r;
+	int		f;
+	r = strlcpy(ft_dst, string, 5);
+	f = ft_strlcpy(dst, string, 5);
+	printf("Testing empty and Test, expected %s %d, result %s %d\n", ft_dst, r, dst, f);
 	return (0);
 }
 

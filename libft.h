@@ -6,14 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:07:15 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:46:23 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-// TODO check if size_t is needed or some libs are allowed unistd eg
+# include <stdlib.h>
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -27,5 +26,6 @@ void			*ft_memcpy(void *dst, const void *src, int n);
 void			*ft_memmove(void *dst, const void *src, int len);
 unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize);
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize);
+int				ft_toupper(int c);
 
 #endif

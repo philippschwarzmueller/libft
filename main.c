@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:12:35 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:52:37 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,20 @@ int	test_strlcat(void)
 	return (0);
 }
 
+int	test_toupper(void)
+{
+	print_testname("FT_TOUPPER");
+	putchar(ft_toupper(97));
+	putchar(toupper(97));
+	putchar(ft_toupper(122));
+	putchar(toupper(122));
+	putchar(ft_toupper(96));
+	putchar(toupper(96));
+	putchar(ft_toupper(123));
+	putchar(toupper(123));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -177,6 +191,7 @@ int	main(void)
 	test_memmove();
 	test_strlcpy();
 	test_strlcat();
+	test_toupper();
 
 	return (0);
 }

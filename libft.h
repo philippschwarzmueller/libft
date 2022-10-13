@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 17:10:12 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:24:19 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize);
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_strchr(const char *s, int c);
 
 #endif

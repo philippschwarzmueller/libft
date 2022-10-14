@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 17:28:04 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/14 08:56:19 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,8 +198,18 @@ int	test_strchr(void)
 	print_testname("FT_STRCHR");
 	char	test[] = "abcdefg";
 	printf("Testing c in abcdefg, expected %p, result %p\n", strchr(test, 99), ft_strchr(test, 99));
-	printf("Testing c in abcdefg, expected %p, result %p\n", strchr(test, 97), ft_strchr(test, 97));
-	printf("Testing c in abcdefg, expected %p, result %p\n", strchr(test, 122), ft_strchr(test, 122));
+	printf("Testing a in abcdefg, expected %p, result %p\n", strchr(test, 97), ft_strchr(test, 97));
+	printf("Testing z in abcdefg, expected %p, result %p\n", strchr(test, 122), ft_strchr(test, 122));
+	return (0);
+}
+
+int	test_strrchr(void)
+{
+	print_testname("FT_STRRCHR");
+	char	test[] = "abcdefg";
+	printf("Testing c in abcdefg, expected %p, result %p\n", strrchr(test, 99), ft_strrchr(test, 99));
+	printf("Testing a in abcdefg, expected %p, result %p\n", strrchr(test, 97), ft_strrchr(test, 97));
+	printf("Testing z in abcdefg, expected %p, result %p\n", strrchr(test, 122), ft_strrchr(test, 122));
 	return (0);
 }
 
@@ -220,6 +230,7 @@ int	main(void)
 	test_toupper();
 	test_tolower();
 	test_strchr();
+	test_strrchr();
 
 	return (0);
 }

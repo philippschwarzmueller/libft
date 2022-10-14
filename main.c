@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/14 08:56:19 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/14 09:22:52 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,21 @@ int	test_strrchr(void)
 	return (0);
 }
 
+int	test_strncmp(void)
+{
+	print_testname("FT_STRNCMP");
+	char	str1[] = "Hello World!";
+	char	str2[] = "afllo World!";
+	char	str3[] = "xxxxxxxxxxx!";
+	char	str4[] = "xxxxxxxxxxxx";
+	printf("Expected: %i, result: %i\n", strncmp(str1, str2, 5), ft_strncmp(str1, str2, 5));
+	printf("Expected: %i, result: %i\n", strncmp(str1, str3, 12), ft_strncmp(str1, str3, 12));
+	printf("Expected: %i, result: %i\n", strncmp(str1, str4, 12), ft_strncmp(str1, str4, 12));
+	printf("Expected: %i, result: %i\n", strncmp(str1, str4, 0), ft_strncmp(str1, str4, 0));
+
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -231,6 +246,7 @@ int	main(void)
 	test_tolower();
 	test_strchr();
 	test_strrchr();
+	test_strncmp();
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/14 10:27:47 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:03:00 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,20 @@ int	test_memchr(void)
 	return (0);
 }
 
+int	test_memcmp(void)
+{
+	print_testname("FT_MEMCMP");
+	char	str1[] = "Hello World!";
+	char	str2[] = "afllo World!";
+	char	str3[] = "xxxxxxxxxxx!";
+	char	str4[] = "xxxxxxxxxxxx";
+	printf("Expected: %i, result: %i\n", memcmp(str1, str2, 5), ft_memcmp(str1, str2, 5));
+	printf("Expected: %i, result: %i\n", memcmp(str1, str3, 12), ft_memcmp(str1, str3, 12));
+	printf("Expected: %i, result: %i\n", memcmp(str1, str4, 12), ft_memcmp(str1, str4, 12));
+	printf("Expected: %i, result: %i\n", memcmp(str1, str4, 0), ft_memcmp(str1, str4, 0));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -259,6 +273,7 @@ int	main(void)
 	test_strrchr();
 	test_strncmp();
 	test_memchr();
+	test_memcmp();
 
 	return (0);
 }

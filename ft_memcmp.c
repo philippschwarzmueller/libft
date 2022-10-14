@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 09:54:32 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/14 10:45:19 by pschwarz         ###   ########.fr       */
+/*   Created: 2022/10/14 10:40:38 by pschwarz          #+#    #+#             */
+/*   Updated: 2022/10/14 11:14:48 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
-	char	*res;
+	// TODO Fix type error
+	unsigned char	*p1 = s1;
+	unsigned char	*p2 = s2;
 
-	// TODO check if typecasting to char array really is the point
-	i = 0;
-	res = (char *) s;
-	while (n && res[i] != (unsigned char) c)
+	if (n != 0)
 	{
-		i++;
-		n--;
+		while (n != 0)
+		{
+			if (p1 != p2)
+			{
+				return (p1 - p2);
+			}
+			n--;
+		}
 	}
-	if (res[i] == (unsigned char) c)
-	{
-		return (res + i);
-	}
-	return (NULL);
+	return (0);
 }

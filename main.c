@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/14 11:03:00 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/14 12:05:34 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,8 @@ int	test_memcmp(void)
 	printf("Expected: %i, result: %i\n", memcmp(str1, str4, 0), ft_memcmp(str1, str4, 0));
 	return (0);
 }
+
+// TODO implement test for strnstr
 
 int	main(void)
 {

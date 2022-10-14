@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/14 09:22:52 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/14 10:27:47 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,17 @@ int	test_strncmp(void)
 	return (0);
 }
 
+int	test_memchr(void)
+{
+	print_testname("FT_MEMCHR");
+	char	test[] = "abcdefg";
+	printf("Testing c in abcdefg, expected %p, result %p\n", memchr(test, 99, strlen(test)), ft_memchr(test, 99, strlen(test)));
+	printf("Testing a in abcdefg, expected %p, result %p\n", memchr(test, 97, strlen(test)), ft_memchr(test, 97, strlen(test)));
+	printf("Testing z in abcdefg, expected %p, result %p\n", memchr(test, 122, strlen(test)), ft_memchr(test, 122, strlen(test)));
+	printf("Testing z in abcdefg, expected %p, result %p\n", memchr(test, 122, 1), ft_memchr(test, 122, 1));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -247,6 +258,7 @@ int	main(void)
 	test_strchr();
 	test_strrchr();
 	test_strncmp();
+	test_memchr();
 
 	return (0);
 }

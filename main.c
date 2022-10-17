@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 13:51:30 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:12:16 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -280,6 +280,15 @@ int	test_atoi(void)
 	return (0);
 }
 
+int	test_calloc(void)
+{
+	print_testname("CALLOC");
+	printf("Str expected: %lu, result %lu\n", strlen(calloc(12, 4)), strlen(ft_calloc(12, 4)));
+	printf("Ptr expected: %p, result %p\n", calloc(12, 4), ft_calloc(12, 4));
+	printf("NULL test, expected: %p, result %p\n", calloc(0, 0), ft_calloc(0, 0));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -303,6 +312,7 @@ int	main(void)
 	test_memcmp();
 	test_strnstr();
 	test_atoi();
+	test_calloc();
 
 	return (0);
 }

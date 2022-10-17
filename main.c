@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 14:12:16 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/17 14:36:46 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,6 +289,14 @@ int	test_calloc(void)
 	return (0);
 }
 
+int	test_strdup(void)
+{
+	print_testname("STRDUP");
+	char	test[] = "Hello world!";
+	printf("Expected: %s, result: %s\n", strdup(test), ft_strdup(test));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -313,6 +321,7 @@ int	main(void)
 	test_strnstr();
 	test_atoi();
 	test_calloc();
+	test_strdup();
 
 	return (0);
 }

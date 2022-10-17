@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 11:50:18 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:51:30 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,6 +265,21 @@ int	test_strnstr(void)
 	return (0);
 }
 
+int	test_atoi(void)
+{
+	print_testname("FT_ATOI");
+	printf("Testing abcde, expected: %i, result %i\n", atoi("abcde"), ft_atoi("abcde"));
+	printf("Testing ++--1, expected: %i, result %i\n", atoi("++--1"), ft_atoi("++--1"));
+	printf("Testing +-1  , expected: %i, result %i\n", atoi("+-1 "), ft_atoi("+-1 "));
+	printf("Testing -1   , expected: %i, result %i\n", atoi("-1  "), ft_atoi("-1  "));
+	printf("Testing     2, expected: %i, result %i\n", atoi("    2"), ft_atoi("    2"));
+	printf("Testing    -2, expected: %i, result %i\n", atoi("   -2"), ft_atoi("   -2"));
+	printf("Testing 12345, expected: %i, result %i\n", atoi("12345"), ft_atoi("12345"));
+	printf("Testing abc12, expected: %i, result %i\n", atoi("abc12"), ft_atoi("abc12"));
+	printf("Testing linbebreak1, expected: %i, result %i\n", atoi("\n1"), ft_atoi("\n1"));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -287,6 +302,7 @@ int	main(void)
 	test_memchr();
 	test_memcmp();
 	test_strnstr();
+	test_atoi();
 
 	return (0);
 }

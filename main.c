@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 11:38:46 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:50:18 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,7 +253,17 @@ int	test_memcmp(void)
 	return (0);
 }
 
-// TODO implement test for strnstr
+int	test_strnstr(void)
+{
+	print_testname("FT_STRNSTR");
+	char	haystack[] = "I am a haystack, find my needle";
+	char	needle[] = "needle";
+	char	wrongneedle[] = "spike";
+	printf("Find needle, expected: %p, result %p\n", strnstr(haystack, needle, 32), ft_strnstr(haystack, needle, 32));
+	printf("Find spike, expected: %p, result %p\n", strnstr(haystack, wrongneedle, 32), ft_strnstr(haystack, wrongneedle, 32));
+	printf("Testing len of only 2, expected: %p, result %p\n", strnstr(haystack, needle, 2), ft_strnstr(haystack, needle, 2));
+	return (0);
+}
 
 int	main(void)
 {
@@ -276,6 +286,7 @@ int	main(void)
 	test_strncmp();
 	test_memchr();
 	test_memcmp();
+	test_strnstr();
 
 	return (0);
 }

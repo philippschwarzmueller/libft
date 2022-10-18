@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 10:00:55 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:54:19 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,6 +319,21 @@ int	test_strtrim(void)
 	return (0);
 }
 
+int	test_split(void)
+{
+	print_testname("SPLIT");
+	char	**test = ft_split("AAAA  AAAA", ' ');
+	int		i;
+
+	i = 0;
+	while (test[i])
+	{
+		printf("%s\n", test[i]);
+		i++;
+	}
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -347,6 +362,7 @@ int	main(void)
 	test_substr();
 	test_strjoin();
 	test_strtrim();
+	test_split();
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 08:56:25 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:00:55 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -312,6 +312,13 @@ int	test_strjoin(void)
 	return (0);
 }
 
+int	test_strtrim(void)
+{
+	print_testname("STRTRIM");
+	printf("Expected: %s, result: %s\n", "World!", ft_strtrim("aHello World! ello", " Hello"));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -339,6 +346,7 @@ int	main(void)
 	test_strdup();
 	test_substr();
 	test_strjoin();
+	test_strtrim();
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 11:54:19 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 13:41:21 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,6 +334,13 @@ int	test_split(void)
 	return (0);
 }
 
+int	test_itoa(void)
+{
+	print_testname("ITOA");
+	printf("Expected: 111, result: %s\n", ft_itoa(111));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -363,6 +370,7 @@ int	main(void)
 	test_strjoin();
 	test_strtrim();
 	test_split();
+	test_itoa();
 
 	return (0);
 }

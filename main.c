@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 13:41:21 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:06:43 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,10 +334,23 @@ int	test_split(void)
 	return (0);
 }
 
-int	test_itoa(void)
+/* int	test_itoa(void)
 {
 	print_testname("ITOA");
 	printf("Expected: 111, result: %s\n", ft_itoa(111));
+	return (0);
+} */
+
+char	test_fun(unsigned int i, char c)
+{
+	i += 10;
+	return (c - 32);
+}
+
+int	test_strmapi(void)
+{
+	print_testname("STRMAPI");
+	printf("%s\n", ft_strmapi("test", *test_fun));
 	return (0);
 }
 
@@ -370,7 +383,8 @@ int	main(void)
 	test_strjoin();
 	test_strtrim();
 	test_split();
-	test_itoa();
+	/* test_itoa(); */
+	test_strmapi();
 
 	return (0);
 }

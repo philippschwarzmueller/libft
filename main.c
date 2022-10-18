@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 16:09:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:09:38 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,6 +369,14 @@ int	test_striteri(void)
 	return (0);
 }
 
+int	test_putchar_fd(void)
+{
+	print_testname("PUTCHAR_FD");
+	ft_putchar_fd('4', 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -401,6 +409,7 @@ int	main(void)
 	/* test_itoa(); */
 	test_strmapi();
 	test_striteri();
+	test_putchar_fd();
 
 	return (0);
 }

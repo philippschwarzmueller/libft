@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 08:22:03 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/18 08:56:25 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,6 +305,13 @@ int	test_substr(void)
 	return (0);
 }
 
+int	test_strjoin(void)
+{
+	print_testname("STRJOIN");
+	printf("Expected: %s, result %s\n", "Hello World!", ft_strjoin("Hello", " World!"));
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -331,6 +338,7 @@ int	main(void)
 	test_calloc();
 	test_strdup();
 	test_substr();
+	test_strjoin();
 
 	return (0);
 }

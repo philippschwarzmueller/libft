@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 17:02:17 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:28:09 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -406,7 +406,7 @@ int	main(void)
 	test_strlen();
 	test_memset();
 	test_bzero();
-	/* test_memcpy(); */
+	test_memcpy();
 	test_memmove();
 	test_strlcpy();
 	test_strlcat();

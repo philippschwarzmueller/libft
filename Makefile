@@ -6,7 +6,7 @@
 #    By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 14:05:01 by pschwarz          #+#    #+#              #
-#    Updated: 2022/10/19 09:24:54 by pschwarz         ###   ########.fr        #
+#    Updated: 2022/10/19 09:50:53 by pschwarz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,15 @@ SRC = main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c \
 	ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c ft_lstnew.c
+	ft_putnbr_fd.c
+
+BONUS = ft_lstnew.c ft_lstadd_front.c
 
 all:
 	cc $(CFLAGS) -o $(NAME) $(SRC) -g
 
 bonus:
-	cc $(CFLAGS) -o $(NAME) $(SRC) -g
+	cc $(CFLAGS) -o $(NAME) $(SRC) $(BONUS) -g
 
 clean:
 	rm -f *.o

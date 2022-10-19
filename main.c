@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:53:23 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:47:41 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -396,6 +396,16 @@ int	test_putnbr_fd(void)
 {
 	print_testname("PUTNBR_FD");
 	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
+
+int	test_lstnew(void)
+{
+	print_testname("LSTNEW");
+	char	*content = "Test content";
+	t_list	*new_list = ft_lstnew(content);
+	printf("%s\n", new_list->content);
 	return (0);
 }
 
@@ -435,6 +445,7 @@ int	main(void)
 	test_putstr_fd();
 	test_putendl_fd();
 	test_putnbr_fd();
+	test_lstnew();
 
 	return (0);
 }

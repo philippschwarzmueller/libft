@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:42:52 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:53:12 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-
+// TODO use size_t where needed instead of unsigned int
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -26,7 +26,7 @@ void			*ft_bzero(void *s, int n);
 void			*ft_memcpy(void *dst, const void *src, int n);
 void			*ft_memmove(void *dst, const void *src, int len);
 unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize);
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize);
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strchr(const char *s, int c);

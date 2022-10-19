@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 16:17:10 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:02:17 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,13 +151,12 @@ int	test_strlcpy(void)
 int	test_strlcat(void)
 {
 	print_testname("TESTING FT_STRLCAT");
-	char	str1dst[20] = "Hello";
-	char	str1dst2[20] = "Hello";
+	char	str1dst[14] = "Hello";
+	char	str1dst_ft[14] = "Hello";
 	char	str2src[] = " World!";
-	int		returnval1 = strlcat(str1dst2, str2src, 7);
-	int		returnval = ft_strlcat(str1dst, str2src, 7);
-	// TODO strlcat does not seem to work properly - wrong call?
-	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst2, returnval1, str1dst, returnval);
+	int		returnval = strlcat(str1dst, str2src, 14);
+	int		returnval_ft = ft_strlcat(str1dst_ft, str2src, 14);
+	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst, returnval, str1dst_ft, returnval_ft);
 	return (0);
 }
 
@@ -407,7 +406,7 @@ int	main(void)
 	test_strlen();
 	test_memset();
 	test_bzero();
-	test_memcpy();
+	/* test_memcpy(); */
 	test_memmove();
 	test_strlcpy();
 	test_strlcat();

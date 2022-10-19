@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:53:23 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:17:10 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,7 @@ int	test_memmove(void)
 {
 	print_testname("TESTING FT_MEMMOVE");
 	char	str[] = "foo-bar";
-	printf("Memcpy: %s; Memmove: %s\n", memcpy(&str[3], &str[4], 4), memmove(&str[3], &str[4], 4));
-	//doing the same thing, might be because gcc handles it (See comment here: https://stackoverflow.com/a/1201343/13771267)
-	//TODO test own ft_memmove
+	printf("Expected: %s; Memmove: %s\n", memmove(&str[3], &str[4], 4), ft_memmove(&str[3], &str[4], 4));
 	return (0);
 }
 

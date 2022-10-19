@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 10:25:14 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:54:36 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -411,6 +411,7 @@ int	test_lstnew(void)
 
 // TODO add test for add to front
 // TODO add test for lstsize
+// TODO add test for lstlast
 
 int	main(void)
 {

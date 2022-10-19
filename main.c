@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 13:54:36 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:57:27 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -400,12 +400,32 @@ int	test_putnbr_fd(void)
 	return (0);
 }
 
+void	print_lst(t_list **lst)
+{
+	t_list *current;
+	current = *lst;
+	while (current != NULL)
+	{
+		printf("------------------------\n");
+		printf("| Content: %s\n", current->content);
+		printf("| Next: %p\n", current->next);
+		printf("------------------------\n");
+		current = current->next;
+	}
+}
+
 int	test_lstnew(void)
 {
 	print_testname("LSTNEW");
 	char	*content = "Test content";
 	t_list	*new_list = ft_lstnew(content);
-	printf("%s\n", new_list->content);
+	printf("Created list\n");
+	print_lst(&new_list);
+	printf("Added item to back\n");
+	char	*second_content = "Second item";
+	t_list	*second_item = ft_lstnew(second_content);
+	ft_lstadd_back(&new_list, second_item);
+	print_lst(&new_list);
 	return (0);
 }
 

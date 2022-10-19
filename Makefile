@@ -6,7 +6,7 @@
 #    By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 14:05:01 by pschwarz          #+#    #+#              #
-#    Updated: 2022/10/19 13:52:07 by pschwarz         ###   ########.fr        #
+#    Updated: 2022/10/19 13:57:40 by pschwarz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c
 
 all:
 	cc $(CFLAGS) -o $(NAME) $(SRC) -g

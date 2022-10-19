@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:39:34 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 08:53:23 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -392,6 +392,13 @@ int	test_putendl_fd(void)
 	return (0);
 }
 
+int	test_putnbr_fd(void)
+{
+	print_testname("PUTNBR_FD");
+	ft_putnbr_fd(-2147483648, 1);
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -427,6 +434,7 @@ int	main(void)
 	test_putchar_fd();
 	test_putstr_fd();
 	test_putendl_fd();
+	test_putnbr_fd();
 
 	return (0);
 }

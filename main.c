@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:28:11 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/19 08:39:34 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -385,6 +385,13 @@ int	test_putstr_fd(void)
 	return (0);
 }
 
+int	test_putendl_fd(void)
+{
+	print_testname("PUTENDL_FD");
+	ft_putendl_fd("Hello world!", 1);
+	return (0);
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -419,6 +426,7 @@ int	main(void)
 	test_striteri();
 	test_putchar_fd();
 	test_putstr_fd();
+	test_putendl_fd();
 
 	return (0);
 }

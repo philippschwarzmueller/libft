@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 16:03:05 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:47:38 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,8 +155,6 @@ void	test_strlcpy(void)
 	char	dst[5];
 	char	ft_dst[5];
 	char	string[] = "Test1234";
-	int		r;
-	int		f;
 	compare_ints((int) strlcpy(dst, string, 5), (int) ft_strlcpy(ft_dst, string, 5));
 	compare_strs(dst, ft_dst);
 	printf("\n");
@@ -164,6 +162,7 @@ void	test_strlcpy(void)
 
 int	test_strlcat(void)
 {
+	// TODO new test format
 	print_testname("TESTING FT_STRLCAT");
 	char	str1dst[14] = "Hello";
 	char	str1dst_ft[14] = "Hello";
@@ -174,34 +173,24 @@ int	test_strlcat(void)
 	return (0);
 }
 
-int	test_toupper(void)
+void	test_toupper(void)
 {
 	print_testname("FT_TOUPPER");
-	putchar(ft_toupper(97));
-	putchar(toupper(97));
-	putchar(ft_toupper(122));
-	putchar(toupper(122));
-	putchar(ft_toupper(96));
-	putchar(toupper(96));
-	putchar(ft_toupper(123));
-	putchar(toupper(123));
-	putchar('\n');
-	return (0);
+	compare_ints(toupper(97), ft_toupper(97));
+	compare_ints(toupper(122), ft_toupper(122));
+	compare_ints(toupper(96), ft_toupper(96));
+	compare_ints(toupper(123), ft_toupper(123));
+	printf("\n");
 }
 
-int	test_tolower(void)
+void	test_tolower(void)
 {
 	print_testname("FT_TOLOWER");
-	putchar(ft_tolower(65));
-	putchar(tolower(65));
-	putchar(ft_tolower(90));
-	putchar(tolower(90));
-	putchar(ft_tolower(64));
-	putchar(tolower(64));
-	putchar(ft_tolower(91));
-	putchar(tolower(91));
-	putchar('\n');
-	return (0);
+	compare_ints(tolower(65), ft_tolower(65));
+	compare_ints(tolower(90), ft_tolower(90));
+	compare_ints(tolower(64), ft_tolower(64));
+	compare_ints(tolower(91), ft_tolower(91));
+	printf("\n");
 }
 
 int	test_strchr(void)

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 14:57:27 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:52:45 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	test_strlen(void)
 	char	str1[] = "hello i am a test";
 	char	str2[] = "";
 	char	str3[] = "                                                        ";
-	printf("Expected: %lu, result: %i\n", strlen(str1), ft_strlen(str1));
-	printf("Expected: %lu, result: %i\n", strlen(str2), ft_strlen(str2));
-	printf("Expected: %lu, result: %i\n", strlen(str3), ft_strlen(str3));
+	printf("Expected: %lu, result: %lu\n", strlen(str1), ft_strlen(str1));
+	printf("Expected: %lu, result: %lu\n", strlen(str2), ft_strlen(str2));
+	printf("Expected: %lu, result: %lu\n", strlen(str3), ft_strlen(str3));
 	return (0);
 }
 
@@ -130,9 +130,7 @@ int	test_memmove(void)
 {
 	print_testname("TESTING FT_MEMMOVE");
 	char	str[] = "foo-bar";
-	printf("Memcpy: %s; Memmove: %s\n", memcpy(&str[3], &str[4], 4), memmove(&str[3], &str[4], 4));
-	//doing the same thing, might be because gcc handles it (See comment here: https://stackoverflow.com/a/1201343/13771267)
-	//TODO test own ft_memmove
+	printf("Expected: %s; Memmove: %s\n", memmove(&str[3], &str[4], 4), ft_memmove(&str[3], &str[4], 4));
 	return (0);
 }
 
@@ -153,13 +151,12 @@ int	test_strlcpy(void)
 int	test_strlcat(void)
 {
 	print_testname("TESTING FT_STRLCAT");
-	char	str1dst[20] = "Hello";
-	char	str1dst2[20] = "Hello";
+	char	str1dst[14] = "Hello";
+	char	str1dst_ft[14] = "Hello";
 	char	str2src[] = " World!";
-	int		returnval1 = strlcat(str1dst2, str2src, 7);
-	int		returnval = ft_strlcat(str1dst, str2src, 7);
-	// TODO strlcat does not seem to work properly - wrong call?
-	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst2, returnval1, str1dst, returnval);
+	int		returnval = strlcat(str1dst, str2src, 14);
+	int		returnval_ft = ft_strlcat(str1dst_ft, str2src, 14);
+	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst, returnval, str1dst_ft, returnval_ft);
 	return (0);
 }
 
@@ -322,13 +319,20 @@ int	test_strtrim(void)
 int	test_split(void)
 {
 	print_testname("SPLIT");
-	char	**test = ft_split("AAAA  AAAA", ' ');
+	char	**test = ft_split("AAAAaaAAAA", 'a');
+	char	**test2 = ft_split("aAAAaAAAa", 'a');
 	int		i;
 
 	i = 0;
 	while (test[i])
 	{
 		printf("%s\n", test[i]);
+		i++;
+	}
+	i = 0;
+	while (test[i])
+	{
+		printf("%s\n", test2[i]);
 		i++;
 	}
 	return (0);

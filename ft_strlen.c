@@ -6,11 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:14:24 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 14:20:47 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:21:57 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

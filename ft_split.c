@@ -6,12 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 11:54:16 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:47:29 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	count_splits(char const *s, char c);
 static char	*write_str(char const *src, int *start, char delimiter);
 
 char	**ft_split(char const *s, char c)
@@ -22,19 +23,10 @@ char	**ft_split(char const *s, char c)
 	int		curr_start;
 
 	i = 0;
-	len = 0;
+	len = count_splits(s, c);
 	curr_start = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			len++;
-		}
-		i++;
-	}
 	len++;
 	res = malloc((sizeof(char *) * len) + 1);
-	i = 0;
 	while (len != 0)
 	{
 		res[i] = write_str(s, &curr_start, c);
@@ -45,14 +37,36 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
+static int	count_splits(char const *s, char c)
+{
+	int	res;
+	int	i;
+
+	i = 0;
+	res = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			res++;
+		}
+		i++;
+	}
+	return (res);
+}
+
 static char	*write_str(char const *src, int *start, char delimiter)
 {
 	char	*new_str;
 	int		i;
 	int		j;
 
-	// TODO fix malloc size
-	new_str = malloc(5);
+	i = *start;
+	while (src[i] != delimiter)
+	{
+		i++;
+	}
+	new_str = malloc(i);
 	i = *start;
 	j = 0;
 	while (src[i] != '\0' && src[i] != delimiter)
@@ -64,36 +78,3 @@ static char	*write_str(char const *src, int *start, char delimiter)
 	*start = i + 1;
 	return (new_str);
 }
-
-// TODO delimiter twice 
-// TODO delimiter at front and back
-
-/* static char	*new_str(char const *src, int start, int end)
-{
-	char	*res;
-	int		i;
-
-	res = malloc(sizeof(src) * (end - start));
-	i = 0;
-	while (start <= end)
-	{
-		res[i] = src[start];
-		i++;
-		start++;
-	}
-	res[i] = '\0';
-	return (res);
-} */
-
-
-/*
-"Hallo Welt, wie geht es dir" delimiter space
-
-Anzahl an return strings bestimmen -> 6
-Malloc fuer die Laenge + 1 fuer NULL als RES
-NULL Pointer ans Ende packen von RES
-Ueber RES iterieren und an jeder Position einen der Return Strings erstellen
-	RES[i] = createString(Startpointer, Endbedingung)
-	i++
-RES returnen
-*/

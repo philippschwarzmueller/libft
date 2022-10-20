@@ -6,13 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 10:44:42 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:47:29 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			count_splits(char const *s, char c);
+static int	count_splits(char const *s, char c);
 static char	*write_str(char const *src, int *start, char delimiter);
 
 char	**ft_split(char const *s, char c)
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-int	count_splits(char const *s, char c)
+static int	count_splits(char const *s, char c)
 {
 	int	res;
 	int	i;

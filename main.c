@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 16:47:38 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:05:32 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,14 +193,15 @@ void	test_tolower(void)
 	printf("\n");
 }
 
-int	test_strchr(void)
+void	test_strchr(void)
 {
 	print_testname("FT_STRCHR");
 	char	test[] = "abcdefg";
 	printf("Testing c in abcdefg, expected %p, result %p\n", strchr(test, 99), ft_strchr(test, 99));
 	printf("Testing a in abcdefg, expected %p, result %p\n", strchr(test, 97), ft_strchr(test, 97));
 	printf("Testing z in abcdefg, expected %p, result %p\n", strchr(test, 122), ft_strchr(test, 122));
-	return (0);
+	// TODO add compare_ptr func
+	printf("\n");
 }
 
 int	test_strrchr(void)
@@ -213,19 +214,18 @@ int	test_strrchr(void)
 	return (0);
 }
 
-int	test_strncmp(void)
+void	test_strncmp(void)
 {
 	print_testname("FT_STRNCMP");
 	char	str1[] = "Hello World!";
 	char	str2[] = "afllo World!";
 	char	str3[] = "xxxxxxxxxxx!";
 	char	str4[] = "xxxxxxxxxxxx";
-	printf("Expected: %i, result: %i\n", strncmp(str1, str2, 5), ft_strncmp(str1, str2, 5));
-	printf("Expected: %i, result: %i\n", strncmp(str1, str3, 12), ft_strncmp(str1, str3, 12));
-	printf("Expected: %i, result: %i\n", strncmp(str1, str4, 12), ft_strncmp(str1, str4, 12));
-	printf("Expected: %i, result: %i\n", strncmp(str1, str4, 0), ft_strncmp(str1, str4, 0));
-
-	return (0);
+	compare_ints(strncmp(str1, str2, 5), ft_strncmp(str1, str2, 5));
+	compare_ints(strncmp(str1, str3, 12), ft_strncmp(str1, str3, 12));
+	compare_ints(strncmp(str1, str4, 12), ft_strncmp(str1, str4, 12));
+	compare_ints(strncmp(str1, str4, 0), ft_strncmp(str1, str4, 0));
+	printf("\n");
 }
 
 int	test_memchr(void)
@@ -239,18 +239,18 @@ int	test_memchr(void)
 	return (0);
 }
 
-int	test_memcmp(void)
+void	test_memcmp(void)
 {
 	print_testname("FT_MEMCMP");
 	char	str1[] = "Hello World!";
 	char	str2[] = "afllo World!";
 	char	str3[] = "xxxxxxxxxxx!";
 	char	str4[] = "xxxxxxxxxxxx";
-	printf("Expected: %i, result: %i\n", memcmp(str1, str2, 5), ft_memcmp(str1, str2, 5));
-	printf("Expected: %i, result: %i\n", memcmp(str1, str3, 12), ft_memcmp(str1, str3, 12));
-	printf("Expected: %i, result: %i\n", memcmp(str1, str4, 12), ft_memcmp(str1, str4, 12));
-	printf("Expected: %i, result: %i\n", memcmp(str1, str4, 0), ft_memcmp(str1, str4, 0));
-	return (0);
+	compare_ints(memcmp(str1, str2, 4), ft_memcmp(str1, str2, 4));
+	compare_ints(memcmp(str1, str3, 12), ft_memcmp(str1, str3, 12));
+	compare_ints(memcmp(str1, str4, 12), ft_memcmp(str1, str4, 12));
+	compare_ints(memcmp(str1, str4, 0), ft_memcmp(str1, str4, 0));
+	printf("\n");
 }
 
 int	test_strnstr(void)
@@ -265,19 +265,19 @@ int	test_strnstr(void)
 	return (0);
 }
 
-int	test_atoi(void)
+void	test_atoi(void)
 {
 	print_testname("FT_ATOI");
-	printf("Testing abcde, expected: %i, result %i\n", atoi("abcde"), ft_atoi("abcde"));
-	printf("Testing ++--1, expected: %i, result %i\n", atoi("++--1"), ft_atoi("++--1"));
-	printf("Testing +-1  , expected: %i, result %i\n", atoi("+-1 "), ft_atoi("+-1 "));
-	printf("Testing -1   , expected: %i, result %i\n", atoi("-1  "), ft_atoi("-1  "));
-	printf("Testing     2, expected: %i, result %i\n", atoi("    2"), ft_atoi("    2"));
-	printf("Testing    -2, expected: %i, result %i\n", atoi("   -2"), ft_atoi("   -2"));
-	printf("Testing 12345, expected: %i, result %i\n", atoi("12345"), ft_atoi("12345"));
-	printf("Testing abc12, expected: %i, result %i\n", atoi("abc12"), ft_atoi("abc12"));
-	printf("Testing linbebreak1, expected: %i, result %i\n", atoi("\n1"), ft_atoi("\n1"));
-	return (0);
+	compare_ints(atoi("abcde"), ft_atoi("abcde"));
+	compare_ints(atoi("++--1"), ft_atoi("++--1"));
+	compare_ints(atoi("+-1 "), ft_atoi("+-1 "));
+	compare_ints(atoi("-1  "), ft_atoi("-1  "));
+	compare_ints(atoi("    2"), ft_atoi("    2"));
+	compare_ints(atoi("   -2"), ft_atoi("   -2"));
+	compare_ints(atoi("12345"), ft_atoi("12345"));
+	compare_ints(atoi("abc12"), ft_atoi("abc12"));
+	compare_ints(atoi("\n1"), ft_atoi("\n1"));
+	printf("\n");
 }
 
 int	test_calloc(void)

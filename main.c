@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 09:23:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:15:38 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,13 +319,20 @@ int	test_strtrim(void)
 int	test_split(void)
 {
 	print_testname("SPLIT");
-	char	**test = ft_split("AAAA  AAAA", ' ');
+	char	**test = ft_split("AAAAaaAAAA", 'a');
+	char	**test2 = ft_split("aAAAaAAAa", 'a');
 	int		i;
 
 	i = 0;
 	while (test[i])
 	{
 		printf("%s\n", test[i]);
+		i++;
+	}
+	i = 0;
+	while (test[i])
+	{
+		printf("%s\n", test2[i]);
 		i++;
 	}
 	return (0);

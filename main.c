@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 14:49:22 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:03:05 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ void	print_testname(char *name)
 void	compare_ints(int original, int ft_version)
 {
 	if (original == ft_version)
+	{
+		printf("\x1b[32m\xE2\x9C\x93\x1b[0m ");
+	}
+	else
+	{
+		printf("\x1b[31mx\x1b[0m ");
+	}
+}
+
+void	compare_strs(char *original, char *ft_version)
+{
+	if (strcmp(original, ft_version) == 0)
 	{
 		printf("\x1b[32m\xE2\x9C\x93\x1b[0m ");
 	}
@@ -60,7 +72,7 @@ void	test_isdigit(void)
 
 void	test_isalnum(void)
 {
-	print_testname("TESTING FT_ISALNUM");
+	print_testname("FT_ISALNUM");
 	compare_ints(isalnum(-1), ft_isalnum(-1));
 	compare_ints(isalnum('0'), ft_isalnum('0'));
 	compare_ints(isalnum('5'), ft_isalnum('5'));
@@ -70,73 +82,74 @@ void	test_isalnum(void)
 	printf("\n");
 }
 
-int	test_isascii(void)
+void	test_isascii(void)
 {
-	print_testname("TESTING FT_ISASCII");
-	printf("Testing -1, expected %i, result %i\n", isascii(-1), ft_isascii(-1));
-	printf("Testing 0, expected %i, result %i\n", isascii(0), ft_isascii(0));
-	printf("Testing !, expected %i, result %i\n", isascii('!'), ft_isascii('!'));
-	printf("Testing ~, expected %i, result %i\n", isascii('~'), ft_isascii('~'));
-	return (0);
+	print_testname("FT_ISASCII");
+	compare_ints(isascii(-1), ft_isascii(-1));
+	compare_ints(isascii(0), ft_isascii(0));
+	compare_ints(isascii('!'), ft_isascii('!'));
+	compare_ints(isascii('~'), ft_isascii('~'));
+	printf("\n");
 }
 
-int	test_isprint(void)
+void	test_isprint(void)
 {
-	print_testname("TESTING FT_ISPRINT");
-	printf("Testing -1, expected %i, result %i\n", isprint(-1), ft_isprint(-1));
-	printf("Testing 0, expected %i, result %i\n", isprint(0), ft_isprint(0));
-	printf("Testing !, expected %i, result %i\n", isprint('!'), ft_isprint('!'));
-	printf("Testing ~, expected %i, result %i\n", isprint('~'), ft_isprint('~'));
-	return (0);
+	print_testname("FT_ISPRINT");
+	compare_ints(isprint(-1), ft_isprint(-1));
+	compare_ints(isprint(0), ft_isprint(0));
+	compare_ints(isprint('!'), ft_isprint('!'));
+	compare_ints(isprint('~'), ft_isprint('~'));
+	printf("\n");
 }
 
-int	test_strlen(void)
+void	test_strlen(void)
 {
-	print_testname("TESTING FT_STRELN");
+	print_testname("FT_STRELN");
 	char	str1[] = "hello i am a test";
 	char	str2[] = "";
 	char	str3[] = "                                                        ";
-	printf("Expected: %lu, result: %lu\n", strlen(str1), ft_strlen(str1));
-	printf("Expected: %lu, result: %lu\n", strlen(str2), ft_strlen(str2));
-	printf("Expected: %lu, result: %lu\n", strlen(str3), ft_strlen(str3));
-	return (0);
+	compare_ints((int) strlen(str1), (int) ft_strlen(str1));
+	compare_ints((int) strlen(str2), (int) ft_strlen(str2));
+	compare_ints((int) strlen(str3), (int) ft_strlen(str3));
+	printf("\n");
 }
 
-int	test_memset(void)
+void	test_memset(void)
 {
-	print_testname("TESTING FT_MEMSET");
+	print_testname("FT_MEMSET");
 	char	teststring[] = "Hello World";
-	printf("Testing Hello World with 'A', expected %s, result %s\n", memset(teststring, 'A', 5), ft_memset(teststring, 'A', 5));
-	return (0);
+	compare_strs(memset(teststring, 'A', 5), ft_memset(teststring, 'A', 5));
+	printf("\n");
 }
 
-int	test_bzero(void)
+void	test_bzero(void)
 {
-	print_testname("TESTING FT_BZERO");
+	print_testname("FT_BZERO");
 	char	bzerotest[] = "Hello World";
-	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 1), ft_bzero(bzerotest, 1));
-	printf("Testing Hello World, expected %s, result %s\n", bzero(bzerotest, 12), ft_bzero(bzerotest, 12));
-	return (0);
+	compare_strs(bzero(bzerotest, 1), ft_bzero(bzerotest, 1));
+	compare_strs(bzero(bzerotest, 12), ft_bzero(bzerotest, 12));
+	printf("\n");
 }
 
-int	test_memcpy(void)
+void	test_memcpy(void)
 {
-	print_testname("TESTING FT_MEMCPY");
+	print_testname("FT_MEMCPY");
 	char	memcpydst[] = "hello world";
-	char	memcpysrc[] = "Hello World";
-	printf("Testing hello world and Hello World, expected %s, result %s\n", memcpy(memcpydst, memcpysrc, 12), ft_memcpy(memcpydst, memcpysrc, 12));
-	return (0);
+	char	memcpydst_ft[] = "hello world";
+	char	memcpysrc[] = "DjIwHkO0n&~";
+	compare_strs(memcpy(memcpydst, memcpysrc, 12), ft_memcpy(memcpydst_ft, memcpysrc, 12));
+	printf("\n");
 }
 
-int	test_memmove(void)
+void	test_memmove(void)
 {
-	print_testname("TESTING FT_MEMMOVE");
+	print_testname("FT_MEMMOVE");
 	char	str[] = "foo-bar";
-	printf("Expected: %s; Memmove: %s\n", memmove(&str[3], &str[4], 4), ft_memmove(&str[3], &str[4], 4));
-	return (0);
+	compare_strs(memmove(&str[3], &str[4], 4), ft_memmove(&str[3], &str[4], 4));
+	printf("\n");
 }
 
-int	test_strlcpy(void)
+void	test_strlcpy(void)
 {
 	print_testname("TESTING FT_STRLCPY");
 	char	dst[5];
@@ -144,10 +157,9 @@ int	test_strlcpy(void)
 	char	string[] = "Test1234";
 	int		r;
 	int		f;
-	r = strlcpy(ft_dst, string, 5);
-	f = ft_strlcpy(dst, string, 5);
-	printf("Testing empty and Test, expected %s %d, result %s %d\n", ft_dst, r, dst, f);
-	return (0);
+	compare_ints((int) strlcpy(dst, string, 5), (int) ft_strlcpy(ft_dst, string, 5));
+	compare_strs(dst, ft_dst);
+	printf("\n");
 }
 
 int	test_strlcat(void)

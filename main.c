@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 10:15:38 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:49:22 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,57 +15,59 @@
 #include <string.h>
 #include "libft.h"
 
-int	print_testname(char *name)
+void	print_testname(char *name)
 {
-	printf("\x1b[32m");
-	printf("-----TESTING %s-----\x1b[0m\n", name);
-	return (0);
+	printf("\x1b[32m-----TESTING %s-----\x1b[0m\n", name);
 }
 
-int	test_isalpha(void)
+void	compare_ints(int original, int ft_version)
 {
-	print_testname("TESTING FT_ISALPHA");
-	printf("Testing 100, expected %i, result %i\n", isalpha(100),
-		ft_isalpha(100));
-	printf("Testing 101, expected %i, result %i\n", isalpha(101),
-		ft_isalpha(101));
-	printf("Testing 132, expected %i, result %i\n", isalpha(132),
-		ft_isalpha(132));
-	printf("Testing 133, expected %i, result %i\n", isalpha(133),
-		ft_isalpha(133));
-	printf("Testing 140, expected %i, result %i\n", isalpha(140),
-		ft_isalpha(140));
-	printf("Testing 141, expected %i, result %i\n", isalpha(141),
-		ft_isalpha(141));
-	printf("Testing 172, expected %i, result %i\n", isalpha(172),
-		ft_isalpha(172));
-	printf("Testing 173, expected %i, result %i\n", isalpha(173),
-		ft_isalpha(173));
-	return (0);
+	if (original == ft_version)
+	{
+		printf("\x1b[32m\xE2\x9C\x93\x1b[0m ");
+	}
+	else
+	{
+		printf("\x1b[31mx\x1b[0m ");
+	}
 }
 
-int	test_isdigit(void)
+void	test_isalpha(void)
 {
-	print_testname("TESTING FT_ISDIGIT");
-	printf("Testing -1, expected %i, result %i\n", isdigit(-1), ft_isdigit(-1));
-	printf("Testing 0, expected %i, result %i\n", isdigit('0'), ft_isdigit('0'));
-	printf("Testing 5, expected %i, result %i\n", isdigit('5'), ft_isdigit('5'));
-	printf("Testing 9, expected %i, result %i\n", isdigit('9'), ft_isdigit('9'));
-	printf("Testing ,, expected %i, result %i\n", isdigit(40), ft_isdigit(40));
-	printf("Testing P, expected %i, result %i\n", isdigit('P'), ft_isdigit('P'));
-	return (0);
+	print_testname("FT_ISALPHA");
+	compare_ints(isalpha(100), ft_isalpha(100));
+	compare_ints(isalpha(101), ft_isalpha(101));
+	compare_ints(isalpha(132), ft_isalpha(132));
+	compare_ints(isalpha(133), ft_isalpha(133));
+	compare_ints(isalpha(140), ft_isalpha(140));
+	compare_ints(isalpha(141), ft_isalpha(141));
+	compare_ints(isalpha(172), ft_isalpha(172));
+	compare_ints(isalpha(173), ft_isalpha(173));
+	printf("\n");
 }
 
-int	test_isalnum(void)
+void	test_isdigit(void)
+{
+	print_testname("FT_ISDIGIT");
+	compare_ints(isdigit(-1), ft_isdigit(-1));
+	compare_ints(isdigit('0'), ft_isdigit('0'));
+	compare_ints(isdigit('5'), ft_isdigit('5'));
+	compare_ints(isdigit('9'), ft_isdigit('9'));
+	compare_ints(isdigit(40), ft_isdigit(40));
+	compare_ints(isdigit('P'), ft_isdigit('P'));
+	printf("\n");
+}
+
+void	test_isalnum(void)
 {
 	print_testname("TESTING FT_ISALNUM");
-	printf("Testing -1, expected %i, result %i\n", isalnum(-1), ft_isalnum(-1));
-	printf("Testing 0, expected %i, result %i\n", isalnum('0'), ft_isalnum('0'));
-	printf("Testing 5, expected %i, result %i\n", isalnum('5'), ft_isalnum('5'));
-	printf("Testing 9, expected %i, result %i\n", isalnum('9'), ft_isalnum('9'));
-	printf("Testing ,, expected %i, result %i\n", isalnum(40), ft_isalnum(40));
-	printf("Testing P, expected %i, result %i\n", isalnum('P'), ft_isalnum('P'));
-	return (0);
+	compare_ints(isalnum(-1), ft_isalnum(-1));
+	compare_ints(isalnum('0'), ft_isalnum('0'));
+	compare_ints(isalnum('5'), ft_isalnum('5'));
+	compare_ints(isalnum('9'), ft_isalnum('9'));
+	compare_ints(isalnum(40), ft_isalnum(40));
+	compare_ints(isalnum('P'), ft_isalnum('P'));
+	printf("\n");
 }
 
 int	test_isascii(void)

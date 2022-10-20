@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 17:28:09 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/20 09:23:49 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	test_strlen(void)
 	char	str1[] = "hello i am a test";
 	char	str2[] = "";
 	char	str3[] = "                                                        ";
-	printf("Expected: %lu, result: %i\n", strlen(str1), ft_strlen(str1));
-	printf("Expected: %lu, result: %i\n", strlen(str2), ft_strlen(str2));
-	printf("Expected: %lu, result: %i\n", strlen(str3), ft_strlen(str3));
+	printf("Expected: %lu, result: %lu\n", strlen(str1), ft_strlen(str1));
+	printf("Expected: %lu, result: %lu\n", strlen(str2), ft_strlen(str2));
+	printf("Expected: %lu, result: %lu\n", strlen(str3), ft_strlen(str3));
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/22 18:36:21 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/22 19:20:53 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,26 +308,27 @@ void	test_strdup(void)
 	printf("\n");
 }
 
-int	test_substr(void)
+void	test_substr(void)
 {
 	print_testname("SUBSTR");
 	char	test[] = "Hello World!";
-	printf("Expected: World!, result: %s\n", ft_substr(test, 6, 6));
-	return (0);
+	compare_strs("World!", ft_substr(test, 6, 6));
+	printf("\n");
 }
 
-int	test_strjoin(void)
+void	test_strjoin(void)
 {
 	print_testname("STRJOIN");
-	printf("Expected: %s, result %s\n", "Hello World!", ft_strjoin("Hello", " World!"));
-	return (0);
+	compare_strs("Hello World!", ft_strjoin("Hello", " World!"));
+	printf("\n");
 }
 
-int	test_strtrim(void)
+void	test_strtrim(void)
 {
 	print_testname("STRTRIM");
-	printf("Expected: %s, result: %s\n", "World!", ft_strtrim("aHello World! ello", " Hello"));
-	return (0);
+	compare_strs("World!", ft_strtrim("Hello World!", "ello H"));
+	compare_strs("Hello World!", ft_strtrim("   Hello World!  ", " "));
+	printf("\n");
 }
 
 int	test_split(void)
@@ -352,12 +353,12 @@ int	test_split(void)
 	return (0);
 }
 
-/* int	test_itoa(void)
+void	test_itoa(void)
 {
 	print_testname("ITOA");
-	printf("Expected: 111, result: %s\n", ft_itoa(111));
-	return (0);
-} */
+	compare_strs("111", ft_itoa(111));
+	printf("\n");
+}
 
 char	test_fun(unsigned int i, char c)
 {
@@ -446,7 +447,7 @@ int	main(void)
 	test_strjoin();
 	test_strtrim();
 	test_split();
-	/* test_itoa(); */
+	test_itoa();
 	test_strmapi();
 	test_striteri();
 	test_putchar_fd();

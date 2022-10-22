@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:18:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 17:05:32 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:36:21 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	compare_ints(int original, int ft_version)
 	}
 	else
 	{
-		printf("\x1b[31mx\x1b[0m ");
+		printf("\x1b[31m X \x1b[0m ");
 	}
 }
 
@@ -40,7 +40,19 @@ void	compare_strs(char *original, char *ft_version)
 	}
 	else
 	{
-		printf("\x1b[31mx\x1b[0m ");
+		printf("\x1b[31mX \x1b[0m");
+	}
+}
+
+void	compare_ptrs(void *original, void *ft_version)
+{
+	if (original == ft_version)
+	{
+		printf("\x1b[32m\xE2\x9C\x93\x1b[0m ");
+	}
+	else
+	{
+		printf("\x1b[31mX \x1b[0m");
 	}
 }
 
@@ -160,7 +172,7 @@ void	test_strlcpy(void)
 	printf("\n");
 }
 
-int	test_strlcat(void)
+void	test_strlcat(void)
 {
 	// TODO new test format
 	print_testname("TESTING FT_STRLCAT");
@@ -169,8 +181,9 @@ int	test_strlcat(void)
 	char	str2src[] = " World!";
 	int		returnval = strlcat(str1dst, str2src, 14);
 	int		returnval_ft = ft_strlcat(str1dst_ft, str2src, 14);
-	printf("Testing Hello and  World!, expected %s %d, result %s %d\n", str1dst, returnval, str1dst_ft, returnval_ft);
-	return (0);
+	compare_ints(returnval, returnval_ft);
+	compare_strs(str1dst, str1dst_ft);
+	printf("\n");
 }
 
 void	test_toupper(void)
@@ -197,21 +210,20 @@ void	test_strchr(void)
 {
 	print_testname("FT_STRCHR");
 	char	test[] = "abcdefg";
-	printf("Testing c in abcdefg, expected %p, result %p\n", strchr(test, 99), ft_strchr(test, 99));
-	printf("Testing a in abcdefg, expected %p, result %p\n", strchr(test, 97), ft_strchr(test, 97));
-	printf("Testing z in abcdefg, expected %p, result %p\n", strchr(test, 122), ft_strchr(test, 122));
-	// TODO add compare_ptr func
+	compare_ptrs(strchr(test, 99), ft_strchr(test, 99));
+	compare_ptrs(strchr(test, 97), ft_strchr(test, 97));
+	compare_ptrs(strchr(test, 122), ft_strchr(test, 122));
 	printf("\n");
 }
 
-int	test_strrchr(void)
+void	test_strrchr(void)
 {
 	print_testname("FT_STRRCHR");
 	char	test[] = "abcdefg";
-	printf("Testing c in abcdefg, expected %p, result %p\n", strrchr(test, 99), ft_strrchr(test, 99));
-	printf("Testing a in abcdefg, expected %p, result %p\n", strrchr(test, 97), ft_strrchr(test, 97));
-	printf("Testing z in abcdefg, expected %p, result %p\n", strrchr(test, 122), ft_strrchr(test, 122));
-	return (0);
+	compare_ptrs(strrchr(test, 99), ft_strrchr(test, 99));
+	compare_ptrs(strrchr(test, 97), ft_strrchr(test, 97));
+	compare_ptrs(strrchr(test, 122), ft_strrchr(test, 122));
+	printf("\n");
 }
 
 void	test_strncmp(void)
@@ -228,15 +240,15 @@ void	test_strncmp(void)
 	printf("\n");
 }
 
-int	test_memchr(void)
+void	test_memchr(void)
 {
 	print_testname("FT_MEMCHR");
 	char	test[] = "abcdefg";
-	printf("Testing c in abcdefg, expected %p, result %p\n", memchr(test, 99, strlen(test)), ft_memchr(test, 99, strlen(test)));
-	printf("Testing a in abcdefg, expected %p, result %p\n", memchr(test, 97, strlen(test)), ft_memchr(test, 97, strlen(test)));
-	printf("Testing z in abcdefg, expected %p, result %p\n", memchr(test, 122, strlen(test)), ft_memchr(test, 122, strlen(test)));
-	printf("Testing z in abcdefg, expected %p, result %p\n", memchr(test, 122, 1), ft_memchr(test, 122, 1));
-	return (0);
+	compare_ptrs(memchr(test, 99, strlen(test)), ft_memchr(test, 99, strlen(test)));
+	compare_ptrs(memchr(test, 97, strlen(test)), ft_memchr(test, 97, strlen(test)));
+	compare_ptrs(memchr(test, 122, strlen(test)), ft_memchr(test, 122, strlen(test)));
+	compare_ptrs(memchr(test, 122, 1), ft_memchr(test, 122, 1));
+	printf("\n");
 }
 
 void	test_memcmp(void)
@@ -253,16 +265,16 @@ void	test_memcmp(void)
 	printf("\n");
 }
 
-int	test_strnstr(void)
+void	test_strnstr(void)
 {
 	print_testname("FT_STRNSTR");
 	char	haystack[] = "I am a haystack, find my needle";
 	char	needle[] = "needle";
 	char	wrongneedle[] = "spike";
-	printf("Find needle, expected: %p, result %p\n", strnstr(haystack, needle, 32), ft_strnstr(haystack, needle, 32));
-	printf("Find spike, expected: %p, result %p\n", strnstr(haystack, wrongneedle, 32), ft_strnstr(haystack, wrongneedle, 32));
-	printf("Testing len of only 2, expected: %p, result %p\n", strnstr(haystack, needle, 2), ft_strnstr(haystack, needle, 2));
-	return (0);
+	compare_ptrs(strnstr(haystack, needle, 32), ft_strnstr(haystack, needle, 32));
+	compare_ptrs(strnstr(haystack, wrongneedle, 32), ft_strnstr(haystack, wrongneedle, 32));
+	compare_ptrs(strnstr(haystack, needle, 2), strnstr(haystack, needle, 2));
+	printf("\n");
 }
 
 void	test_atoi(void)
@@ -280,21 +292,20 @@ void	test_atoi(void)
 	printf("\n");
 }
 
-int	test_calloc(void)
+void	test_calloc(void)
 {
 	print_testname("CALLOC");
-	printf("Str expected: %lu, result %lu\n", strlen(calloc(12, 4)), strlen(ft_calloc(12, 4)));
-	printf("Ptr expected: %p, result %p\n", calloc(12, 4), ft_calloc(12, 4));
-	printf("NULL test, expected: %p, result %p\n", calloc(0, 0), ft_calloc(0, 0));
-	return (0);
+	compare_ints(strlen(calloc(12, 4)), strlen(ft_calloc(12, 4)));
+	printf("\n");
 }
 
-int	test_strdup(void)
+void	test_strdup(void)
 {
 	print_testname("STRDUP");
 	char	test[] = "Hello world!";
-	printf("Expected: %s, result: %s\n", strdup(test), ft_strdup(test));
-	return (0);
+	compare_ints(strlen(strdup(test)), strlen(ft_strdup(test)));
+	compare_strs(strdup(test), ft_strdup(test));
+	printf("\n");
 }
 
 int	test_substr(void)

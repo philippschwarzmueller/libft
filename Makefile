@@ -6,7 +6,7 @@
 #    By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 14:05:01 by pschwarz          #+#    #+#              #
-#    Updated: 2022/10/19 08:43:06 by pschwarz         ###   ########.fr        #
+#    Updated: 2022/11/02 17:40:14 by pschwarz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,16 @@ SRC = main.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
+OBJ = $(SRC:.c=.o)
+
 all:
-	gcc -Wall -Wextra -Werror -o $(NAME) $(SRC) -g
+	gcc -Wall -Wextra -Werror $(SRC) -c
+
+$(NAME): $(OBJ)
+	ar -rcs libft.a $(OBJ)
+
+test:
+	cc $(SRC).o -o $(NAME)
 
 clean:
 	rm -f *.o

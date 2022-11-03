@@ -6,20 +6,20 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:07:49 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 09:59:32 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/03 11:52:56 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int is_partof(char c, char const *set);
+static int	is_partof(char c, char const *set);
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *res;
-	int i;
-	int j;
-	int k;
+	char	*res;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
@@ -43,9 +43,9 @@ char *ft_strtrim(char const *s1, char const *set)
 	return (res);
 }
 
-static int is_partof(char c, char const *set)
+static int	is_partof(char c, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (set[i] != '\0')

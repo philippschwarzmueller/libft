@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:06:34 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 13:55:24 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/03 13:32:44 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ static int	checkoffset(const char *str)
 	unsigned int	i;
 
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' ||
-		str[i] == '\f' || str[i] == '\r' || str[i] == '\t' ||
-		str[i] == '\v')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
 	{
 		i++;
 	}

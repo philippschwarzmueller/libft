@@ -10,17 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned int len)
+void *ft_memset(void *b, int c, unsigned int len)
 {
-	unsigned int		i;
-	char				*temp;
+	unsigned int i;
+	char *temp;
 
 	temp = b;
 	i = 0;
 	while (i < len)
 	{
-		temp[i] = (unsigned char) c;
+		temp[i] = (unsigned char)c;
 		i++;
 	}
+	// TODO why am i returning b and not temp?
 	return (b);
 }

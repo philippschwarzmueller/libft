@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n && *s1 && (*s1 == *s2))
 	{
@@ -20,6 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
+	// TODO test if difference in last char is found aswell
 	if (n == 0)
 	{
 		return (0);

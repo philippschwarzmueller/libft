@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char *ft_strdup(const char *s1)
 {
-	char	*res;
-	int		i;
+	char *res;
+	int i;
 
+	// TODO is strlen(s1) enough? For zero termination at the end this needs +1
 	res = malloc(ft_strlen(s1) * sizeof(*s1));
 	i = 0;
 	if (!res)
@@ -28,5 +29,6 @@ char	*ft_strdup(const char *s1)
 		res[i] = s1[i];
 		i++;
 	}
+	// TODO Zeroterminate the str?
 	return (res);
 }

@@ -12,10 +12,11 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void *ft_calloc(size_t count, size_t size)
 {
-	void	*res;
+	void *res;
 
+	// TODO what if count is way too big? count > MAX / size
 	res = malloc(count * size);
 	if (!res)
 	{

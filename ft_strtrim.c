@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static int	is_partof(char c, char const *set);
+static int is_partof(char c, char const *set);
 
-char	*ft_strtrim(char const *s1, char const *set)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	char	*res;
-	int		i;
-	int		j;
-	int		k;
+	char *res;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
@@ -32,6 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		j--;
 	}
+	// TODO is malloc really needed here?
 	res = malloc(sizeof(s1) * (j - i));
 	while (i <= j)
 	{
@@ -42,9 +43,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (res);
 }
 
-static int	is_partof(char c, char const *set)
+static int is_partof(char c, char const *set)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (set[i] != '\0')
@@ -53,7 +54,7 @@ static int	is_partof(char c, char const *set)
 		{
 			return (1);
 		}
-		i ++;
+		i++;
 	}
 	return (0);
 }

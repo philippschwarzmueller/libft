@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *s, unsigned int n)
+void *ft_bzero(void *s, unsigned int n)
 {
-	unsigned int		i;
-	char				*temp;
+	unsigned int i;
+	char *temp;
 
 	i = 0;
 	temp = s;
@@ -22,5 +22,6 @@ void	*ft_bzero(void *s, unsigned int n)
 		temp[i] = 0;
 		i++;
 	}
+	// TODO this function returns void, though i return s
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:06:34 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/03 13:32:44 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:36:51 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 		res += str[i] - '0';
 		i++;
 	}
-	if (str[offset - 1] == '-')
+	if (offset > 0 && str[offset - 1] == '-')
 	{
 		res *= -1;
 	}

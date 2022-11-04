@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:00:58 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/03 11:46:42 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/04 18:25:59 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
-	// TODO what if count is way too big? count > MAX / size
 	res = malloc(count * size);
 	if (!res)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook <macbook@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/05 16:07:22 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 22:16:28 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,15 @@ static int	count_splits(char const *s, char c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
+			i++;
+		else
 		{
-			while (s[i] == c)
+			res++;
+			while (s[i] && s[i] != c)
 			{
 				i++;
 			}
-			res++;
 		}
-		i++;
 	}
 	return (res);
 }

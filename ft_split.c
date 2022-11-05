@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/20 10:47:29 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:07:22 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ char	**ft_split(char const *s, char c)
 	len = count_splits(s, c);
 	curr_start = 0;
 	len++;
-	res = malloc((sizeof(char *) * len) + 1);
+	res = malloc(sizeof(char *) * (len + 1));
+	if (!res)
+		return (NULL);
 	while (len != 0)
 	{
 		res[i] = write_str(s, &curr_start, c);
@@ -48,6 +50,10 @@ static int	count_splits(char const *s, char c)
 	{
 		if (s[i] == c)
 		{
+			while (s[i] == c)
+			{
+				i++;
+			}
 			res++;
 		}
 		i++;
@@ -55,6 +61,7 @@ static int	count_splits(char const *s, char c)
 	return (res);
 }
 
+// USE MEMCPY(**res, *s + offset, len until next delim) HERE???? or strdup??
 static char	*write_str(char const *src, int *start, char delimiter)
 {
 	char	*new_str;

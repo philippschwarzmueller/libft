@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:47:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/04 18:25:17 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:47:44 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (!(ft_isalpha(c)) && !(ft_isdigit(c)))
-	{
 		return (0);
-	}
 	return (1);
 }

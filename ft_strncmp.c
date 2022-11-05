@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:07:11 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/03 15:42:48 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:57:06 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		n--;
 	}
 	if (n == 0)
-	{
 		return (0);
-	}
 	return ((unsigned char) *s1 - (unsigned char) *s2);
 }

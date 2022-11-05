@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:06:03 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/03 14:59:59 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:56:18 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[j] = '\0';
 	}
 	if (dstsize < dst_len)
-	{
 		dst_len = dstsize;
-	}
 	return (dst_len + src_len);
 }

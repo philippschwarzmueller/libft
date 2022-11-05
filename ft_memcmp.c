@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:40:38 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/04 10:52:33 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:53:58 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		while (n != 0)
 		{
 			if (p1[i] != p2[i])
-			{
 				return (p1[i] - p2[i]);
-			}
 			i++;
 			n--;
 		}

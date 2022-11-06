@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:50:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 14:47:24 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/06 14:47:03 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*res;
-	t_list	*current;
-
-	current = lst;
-	while (current != NULL)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
-		res = current->next;
-		current = current->next;
+		lst = lst->next;
 	}
-	return (res);
+	return (lst);
 }

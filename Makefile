@@ -6,7 +6,7 @@
 #    By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 14:05:01 by pschwarz          #+#    #+#              #
-#    Updated: 2022/11/06 13:48:29 by pschwarz         ###   ########.fr        #
+#    Updated: 2022/11/06 14:24:16 by pschwarz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,10 +33,10 @@ BONUS_OBJ = $(BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs libft.a $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 bonus: $(BONUS_OBJ)
-	ar -rcs libft.a $(OBJ)
+	ar -rcs $(NAME) $(BONUS_OBJ)
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)

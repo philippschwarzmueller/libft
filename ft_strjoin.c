@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 08:48:09 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 09:02:23 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:31:30 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	res = malloc(sizeof(s1) * (s1_len + s2_len));
+	res = malloc(sizeof(*s1) * (s1_len + s2_len + 1));
+	if (!res)
+		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
 	{
@@ -35,5 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s1_len++;
 		i++;
 	}
+	res[s1_len] = '\0';
 	return (res);
 }

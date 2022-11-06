@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 09:10:27 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 17:26:18 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:54:21 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	d = dst;
 	s = src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		d[i] = s[i];

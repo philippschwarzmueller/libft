@@ -6,15 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:29:55 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 15:41:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:51:54 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (!(c >= '0' && c <= '9'))
-	{
-		return (0);
-	}
-	return (1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

@@ -6,15 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:43:37 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/11 12:14:53 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 16:02:17 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z'))
-	{
-		return (0);
-	}
-	return (1);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }

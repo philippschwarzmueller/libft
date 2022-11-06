@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 08:42:19 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/19 08:51:52 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:49:14 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nb *= -1;
 	}
-	if (nb > 10)
+	if (nb <= 9)
+	{
+		ft_putchar_fd(nb + '0', fd);
+	}
+	else
 	{
 		ft_putnbr_fd(nb / 10, fd);
 		ft_putnbr_fd(nb % 10, fd);
-	}
-	if (nb < 10)
-	{
-		ft_putchar_fd(nb + '0', fd);
 	}
 }

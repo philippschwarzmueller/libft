@@ -6,21 +6,23 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:27:43 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/12 11:11:47 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/03 13:50:55 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int		i;
-	char				*temp;
+	int		i;
+	char	*temp;
 
 	i = 0;
 	temp = s;
-	while (i < n)
+	while (n)
 	{
-		temp[i] = 0;
+		temp[i] = '\0';
 		i++;
+		n--;
 	}
-	return (s);
 }

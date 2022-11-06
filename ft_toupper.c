@@ -6,15 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:14:10 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/13 16:27:15 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:59:26 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if (!(c >= 97 && c <= 122))
-	{
-		return (c);
-	}
-	return (c - 32);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

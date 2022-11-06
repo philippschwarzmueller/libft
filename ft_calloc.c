@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:00:58 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/17 14:10:18 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/05 15:47:05 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	res = malloc(count * size);
 	if (!res)
-	{
 		return (NULL);
-	}
 	ft_bzero(res, count * size);
 	return (res);
 }

@@ -6,54 +6,31 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:07:49 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/10/18 09:59:32 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:40:50 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_partof(char c, char const *set);
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
-	int		i;
-	int		j;
-	int		k;
+	int		start;
+	int		end;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	k = 0;
-	while (is_partof(s1[i], set) == 1)
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && ft_strchr(set, s1[start]))
 	{
-		i++;
+		start++;
 	}
-	while (is_partof(s1[j], set) == 1)
+	while (end > start && ft_strchr(set, s1[end - 1]))
 	{
-		j--;
+		end--;
 	}
-	res = malloc(sizeof(s1) * (j - i));
-	while (i <= j)
-	{
-		res[k] = s1[i];
-		i++;
-		k++;
-	}
+	res = malloc((end - start + 1) * sizeof(*s1));
+	if (!res)
+		return (NULL);
+	ft_strlcpy(res, s1 + start, end - start + 1);
 	return (res);
-}
-
-static int	is_partof(char c, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i] != '\0')
-	{
-		if (set[i] == c)
-		{
-			return (1);
-		}
-		i ++;
-	}
-	return (0);
 }

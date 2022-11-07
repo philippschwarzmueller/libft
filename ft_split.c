@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/06 12:55:37 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:23:23 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 		if (i)
 		{
 			res[curr_start++] = ft_memcpy(ft_calloc(i + 1, sizeof(char)), s, i);
-			s = &s[i];
+			s = s + i;
 		}
 		else
 			s++;

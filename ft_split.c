@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/07 17:47:20 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:01:41 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**res;
 
+	if (!s)
+		return (NULL);
 	res = malloc(sizeof(char *) * (count_strings(s, c) + 1));
 	if (!res)
 		return (NULL);

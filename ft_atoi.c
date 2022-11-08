@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:06:34 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/04 17:36:51 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/08 11:00:29 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	offset = checkoffset(str);
 	i = offset;
-	while (str[i] >= 48 && str[i] <= 57)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res *= 10;
 		res += str[i] - '0';

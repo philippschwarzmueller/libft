@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 09:10:27 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/05 15:54:21 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:32:10 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t					i;
-	char					*d;
-	const char				*s;
+	size_t		i;
+	char		*d;
+	const char	*s;
 
 	i = 0;
 	d = dst;

@@ -6,13 +6,13 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:07:53 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/05 15:58:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:44:29 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }

@@ -6,14 +6,16 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:36:46 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/04 18:23:01 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:26:34 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned int len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned int	i;
-	char			*temp;
+	size_t	i;
+	char	*temp;
 
 	temp = b;
 	i = 0;

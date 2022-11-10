@@ -24,7 +24,7 @@ This project is a self coded C library. It contains a lot of general purpose fun
 **strnstr**\
 **atoi**\
 **calloc**\
-**strdup**\
+**strdup**
 
 ## additional functions
 **substr** - returns substring of a string\

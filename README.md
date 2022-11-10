@@ -1,7 +1,7 @@
 # libft - my personal C library
 This project is a self coded C library. It contains a lot of general purpose functions my future programs will rely upon.
 
-## recreated standard functions (see man pages)
+## recreated standard functions (rtfm 😉)
 **isalpha**\
 **isdigit**\
 **isalnum**\

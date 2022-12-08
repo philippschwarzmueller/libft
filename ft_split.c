@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:02:23 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/08 15:01:41 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:09:46 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ static int	count_strings(char const *s, char c)
 		{
 			res++;
 			while (s[i] && s[i] != c)
-			{
 				i++;
-			}
 		}
 	}
 	return (res);

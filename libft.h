@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/08 13:38:49 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:49:45 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// *****************************************************************************
+// *****CHAR OPERATIONS****************************************************** //
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -23,13 +23,13 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
-// *****************************************************************************
+// *****MEM OPERATIONS******************************************************* //
 void			*ft_calloc(size_t count, size_t size);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
-// *****************************************************************************
+// *****STRING OPERATIONS**************************************************** //
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlen(const char *s);
@@ -49,12 +49,12 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
-// *****************************************************************************
+// *****PUT TO FD************************************************************ //
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-// *****************************************************************************
+// *****LINKED LIST AND FUNCTIONS******************************************** //
 typedef struct s_list
 {
 	void			*content;
@@ -71,7 +71,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
-// *****************************************************************************
+// *****GET NEXT LINE******************************************************** //
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif

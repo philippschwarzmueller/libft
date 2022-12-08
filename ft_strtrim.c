@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 09:07:49 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/11/08 15:00:21 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:10:42 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
-	{
 		start++;
-	}
 	while (end > start && ft_strchr(set, s1[end - 1]))
-	{
 		end--;
-	}
 	res = malloc((end - start + 1) * sizeof(*s1));
 	if (!res)
 		return (NULL);

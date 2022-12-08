@@ -38,6 +38,7 @@ This project is a self coded C library. It contains a lot of general purpose fun
 **putstr_fd** - outputs string 's' to given file descriptor\
 **putendl_fd** - outputs string 's' to given file descriptor followed by a newline\
 **putnbr_fd** - outputs integer 'n' to given file descriptor\
+**get_next_line** - reads the next line from a given file descriptor
 
 ## singly linked list
 **lstnew** - create new node\

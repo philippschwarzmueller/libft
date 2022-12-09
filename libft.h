@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/08 13:49:45 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:27:50 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,5 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 # endif
 
 char			*get_next_line(int fd);
-char			*ft_gnl_strjoin(char *s1, char *s2);
 
 #endif

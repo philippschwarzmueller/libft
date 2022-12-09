@@ -6,15 +6,16 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:55:27 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/08 13:36:37 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/09 13:27:14 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static char	*write_state(char *state_str, int fd);
 static char	*ft_get_line(char *state_str);
 static char	*clear_state(char *state_str);
+static char	*ft_gnl_strjoin(char *s1, char *s2);
 
 char	*get_next_line(int fd)
 {
@@ -96,5 +97,28 @@ static char	*clear_state(char *state_str)
 		res[j++] = state_str[i++];
 	res[j] = '\0';
 	free(state_str);
+	return (res);
+}
+
+static char	*ft_gnl_strjoin(char *s1, char *s2)
+{
+	char	*res;
+	int		s1_len;
+	int		s2_len;
+
+	if (!s1)
+	{
+		s1 = malloc(sizeof(char));
+		s1[0] = '\0';
+	}
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	res = malloc(sizeof(*s1) * (s1_len + s2_len + 1));
+	if (!res)
+		return (free(s1), NULL);
+	ft_memcpy(res, s1, s1_len);
+	ft_memcpy(res + s1_len, s2, s2_len);
+	res[s1_len + s2_len] = '\0';
+	free(s1);
 	return (res);
 }

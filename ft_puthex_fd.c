@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 13:29:10 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/12 11:53:51 by pschwarz         ###   ########.fr       */
+/*   Created: 2022/12/12 11:57:43 by pschwarz          #+#    #+#             */
+/*   Updated: 2022/12/12 11:58:11 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+void	ft_puthex_fd(unsigned long long nb, int fd, int uppercase)
 {
-	char	*res;
-	long	nb;
-	size_t	len;
-
-	nb = n;
-	len = ft_numlen_base(nb, 10);
-	res = (char *) malloc(sizeof(char) * (len + 1));
-	if (!res)
-		return (NULL);
-	if (nb == 0)
-		res[0] = '0';
-	if (nb < 0)
+	if (nb > 15)
 	{
-		res[0] = '-';
-		nb = -nb;
+		ft_puthex_fd(nb / 16, fd, uppercase);
+		nb = nb % 16;
 	}
-	res[len--] = '\0';
-	while (nb)
+	if (nb < 16)
 	{
-		res[len] = nb % 10 + '0';
-		nb = nb / 10;
-		len--;
+		if (nb >= 0 && nb < 10)
+			ft_putchar_fd('0' + nb, fd);
+		if (nb > 9)
+		{
+			if (uppercase)
+				ft_putchar_fd(nb + 'A' - 10, fd);
+			else if (!uppercase)
+				ft_putchar_fd(nb + 'a' - 10, fd);
+		}
 	}
-	return (res);
 }

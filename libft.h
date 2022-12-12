@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/12 10:35:12 by pschwarz         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:58:39 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 // *****CHAR OPERATIONS****************************************************** //
 int				ft_isalpha(int c);
@@ -49,11 +50,13 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+int				ft_numlen_base(long long n, int base);
 // *****PUT TO FD************************************************************ //
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(long long n, int fd);
+void			ft_puthex_fd(unsigned long long nb, int fd, int uppercase);
 // *****LINKED LIST AND FUNCTIONS******************************************** //
 typedef struct s_list
 {
@@ -81,5 +84,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 # endif
 
 char			*get_next_line(int fd);
+// *****PRINTF*************************************************************** //
+int				ft_printf(const char *s, ...);
 
 #endif

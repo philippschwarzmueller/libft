@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2023/02/16 14:44:26 by pschwarz         ###   ########.fr       */
+/*   Updated: 2023/02/27 08:18:54 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+// for macOS
+# include <limits.h>
+// for Linux
+# include <stdint.h>
 
 // *****CHAR OPERATIONS****************************************************** //
 int				ft_isalpha(int c);

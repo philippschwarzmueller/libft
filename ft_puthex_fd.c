@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:57:43 by pschwarz          #+#    #+#             */
-/*   Updated: 2022/12/12 11:58:11 by pschwarz         ###   ########.fr       */
+/*   Updated: 2023/02/27 08:13:59 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_puthex_fd(unsigned long long nb, int fd, int uppercase)
 	}
 	if (nb < 16)
 	{
-		if (nb >= 0 && nb < 10)
+		if (nb < 10)
 			ft_putchar_fd('0' + nb, fd);
 		if (nb > 9)
 		{

@@ -20,7 +20,10 @@ void	ft_free_stra(char **stra)
 		return ;
 	i = 0;
 	while (stra[i] != NULL)
+	{
 		free(stra[i]);
+		i++;
+	}
 	free(stra);
 	stra = NULL;
 }

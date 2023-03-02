@@ -6,7 +6,7 @@
 /*   By: pschwarz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:15:08 by pschwarz          #+#    #+#             */
-/*   Updated: 2023/02/27 16:17:59 by pschwarz         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:20:16 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin_f(char *s1, char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
-	len = len_s1 + ft_strlen(s2);
+	len = len_s1 + ft_strlen(s2) + 1;
 	res = malloc(len * sizeof(char));
 	if (!res)
 		return (NULL);

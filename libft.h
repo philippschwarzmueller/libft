@@ -6,7 +6,7 @@
 /*   By: pschwarz <pschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:45:59 by pschwarz          #+#    #+#             */
-/*   Updated: 2023/02/27 16:18:43 by pschwarz         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:24:36 by pschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 int				ft_numlen_base(long long n, int base);
+void			ft_free_stra(char **stra);
 // *****PUT TO FD************************************************************ //
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
